@@ -1,0 +1,77 @@
+<div fxFlex.xs=100 fxLayout='column' fxLayoutAlign='center center'
+    style="padding: 15px;border:2px solid #d5d1d1;margin: 10px  22%;border: radius 5px;display:block;border-radius: 10px;">
+    <div fxLayout="row" fxLayoutAlign="center" style="padding: 8%; ">
+        <form [formGroup]="registerForm" fxFlex.xs="95" (ngSubmit)="onSubmit()">
+            <div fxLayout="column" fxLayoutAlign="center">
+                <div>
+                    <h1>
+                        <span style="color: blue;">F</span><span style="color: orange;">U</span><span
+                            style="color: red;">N</span>
+                        <span style="color: green;">D</span><span style="color: blueviolet;">O</span><span
+                            style="color: bisque;">O</span>
+                        <span style="color: brown;">N</span><span style="color: blue;">O</span><span
+                            style="color: red;">T</span>
+                        <span style="color: orange;">E</span>
+                    </h1>
+                    <h1>Create Your FundooNote Account</h1>
+                </div>
+                <div fxLayoutGap="20px" fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" placeholder="firstName">
+                        <mat-error>add valid first name</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Last Name</mat-label>
+                        <mat-error>add valid last name</mat-error>
+                        <input matInput formControlName="lastName" placeholder="lastName">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="centre">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="">
+                        <mat-error>add valid email</mat-error>
+                        <mat-hint style="font: size 10px;">You can use letters,numbers & periods</mat-hint>
+                    </mat-form-field>
+                    <a style="color:#3f51b5;font-weight: 500; padding-top: 10px;">Use my current email address
+                        instead</a>
+                </div>
+                <div fxLayoutGap="20px" fxLayout="row" fxLayout.xs="column" style="padding-top: 23px;">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Passward</mat-label>
+                        <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                            formControlName="password" placeholder="">
+                        <mat-error>add valid passward</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                            formControlName="confirmPassword" placeholder="">
+                        <mat-error>add valid confirm passward</mat-error>
+                    </mat-form-field>
+                </div>
+                <div style="font-size: small; margin-top:-10px">
+                    <mat-hint style="font: size 50px;">Use 8 or more characters with a mix of letters numbers & symbols
+                    </mat-hint>
+
+                </div>
+                <div style="padding-top: 23px;">
+                    <mat-checkbox matSuffix (click)="togglePasswordVisibility()">
+                        Show Passward</mat-checkbox>
+                </div>
+                <div style="padding-top: 40px;">
+                    <button mat-stroked-button color="primary" style="border: none;" routerLink="/login">Sign in
+                        instead</button>
+                    <button mat-flat-button color="primary" style="float: right;">Next</button>
+                </div>
+            </div>
+        </form>
+        <div fxLayout="column" fxLayoutAlign="center center" style=" margin-left: 15px;height: 400px;margin-top: 20px;"
+            fxHide.xs>
+            <img src="assets/image/account.svg" width="244" height="244" style="direction: ltr;line-height: 1.4286;">
+            <p style="font: size 50px;font-weight: 300;text-align: center;box-sizing: inherit;">One Account.All
+                FundooNote working for you</p>
+        </div>
+    </div>
+</div>
