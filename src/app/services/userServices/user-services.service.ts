@@ -9,7 +9,7 @@ export class UserServicesService {
 token:any;
 
   constructor(private httpService : HttpServicesService) { 
-    this.token=localStorage.getItem("token")
+    //this.token=localStorage.getItem("token")
   }
 
   registration(reqdata:any){
@@ -23,4 +23,29 @@ token:any;
     }
     return this.httpService.postService('User/Register',reqdata,false,header)
   }
+
+  login(reqdata: any) {
+    console.log(reqdata);
+
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+      })
+    }
+    return this.httpService.postService(`User/Login/${reqdata.Email}/${reqdata.Password}`, reqdata,false,header)
+
+  }
+  forgotpassword(reqdata: any) {
+    console.log(reqdata);
+
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'Authorization':'token'
+      })
+    }
+    return this.httpService.postService(`User/Forgotpassword/${reqdata.Email}`, reqdata,true,header)
+
+  }
+
 }
