@@ -48,4 +48,17 @@ token:any;
 
   }
 
+  resetpassword(reqdata: any,token:any) {
+    console.log(reqdata);
+
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json-patch+json',
+        'Authorization':'Bearer' + token
+      })
+    }
+    return this.httpService.putService(`User/ChangePassward`, reqdata,true,header)
+
+  }
+
 }

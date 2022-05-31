@@ -29,7 +29,6 @@ onSubmit() {
   if (this.forgotpasswordForm.valid) {
     let reqData = {
       Email: this.forgotpasswordForm.value.email,
-      // Password: this.loginForm.value.password,
     }
     this.user.forgotpassword(reqData).subscribe((response: any) => {
       console.log(response);
