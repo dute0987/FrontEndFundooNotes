@@ -7,26 +7,26 @@
         <h1 class="example-app-name" fxLayout="row">FundooNote</h1>
         <div>
             <mat-form-field appearance="outline"
-                style="padding-right: 50px; width: 600px;padding-left: 70px;margin-top: 20px; margin-bottom: 10px;border-color: azure;">
-                <mat-icon style="position: center;"> search</mat-icon>
+                style=" height: 10px;padding-right: 50px; width: 650px ;border-radius: 10px;padding-left: 30px;">
+                <mat-icon style="position: top center;margin-top: -150px; ">search</mat-icon>
                 <mat-label></mat-label>
-                <input matInput placeholder="Search">
+                <input matInput placeholder="" style="padding-left:30px; vertical-align:top  ;position: top center; ">
             </mat-form-field>
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 20px 5px 20px; border-radius: 30px;">
-            <mat-icon>refresh</mat-icon>
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px; border-radius: 30px;">
+            <img src="../../../assets/image/refreshlogo.png" style="width: 20px; margin-left:8px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 20px 5px 20px;border-radius: 30px">
-            <mat-icon>view_stream</mat-icon>
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px;border-radius: 30px">
+            <img src="../../../assets/image/viewStream.png" style="width: 20px; margin-left:8px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 20px 5px 20px;border-radius: 30px">
-            <mat-icon>view_module</mat-icon>
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px;border-radius: 30px">
+            <img src="../../../assets/image/setting logo.png" style="width: 20px; margin-left:8px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 20px 5px 20px;border-radius: 30px">
-            <mat-icon>settings</mat-icon>
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 40px;border-radius: 30px">
+            <img src="../../../assets/image/app.png" style="width: 20px; margin-left:8px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 0px 5px 20px;border-radius: 30px">
-            <mat-icon>account_circle</mat-icon>
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 0px 5px 10px;border-radius: 30px">
+            <img src="../../../assets/image/profile.png" style="width: 20px; margin-left:8px">
         </div>
     </mat-toolbar>
 
@@ -35,33 +35,38 @@
             <div>
                 <div>
                     <mat-nav-list class="colour1" fxLayout="row" fxLayoutAlign="start center">
-                        <a mat-list-item routerLink=".">
-                            <mat-icon style="padding-right: 20px;">lightbulb</mat-icon>Notes</a>
+                        <a mat-list-item routerLink="./Notes">
+                            <mat-icon style="padding-right: 30px;">lightbulb</mat-icon>Notes
+                        </a>
                     </mat-nav-list>
                 </div>
                 <div>
                     <mat-nav-list class="colour1" fxLayout="row" fxLayoutAlign="start center">
                         <a mat-list-item routerLink=".">
-                            <mat-icon style="padding-right: 20px;"> notifications</mat-icon>Remainders</a>
+                            <mat-icon style="padding-right: 30px;"> notifications</mat-icon>Remainders
+                        </a>
                     </mat-nav-list>
                 </div>
                 <div>
                     <mat-nav-list class="colour1" fxLayout="row" fxLayoutAlign="start center">
                         <a mat-list-item routerLink=".">
-                            <mat-icon style="padding-right: 20px;">edit</mat-icon>Edit Labels</a>
+                            <mat-icon style="padding-right: 30px;">edit</mat-icon>Edit Labels
+                        </a>
                     </mat-nav-list>
                 </div>
                 <div>
                     <mat-nav-list class="colour1" fxLayout="row" fxLayoutAlign="start center">
-                        
+
                         <a mat-list-item routerLink=".">
-                            <mat-icon style="padding-right: 20px;">archive</mat-icon>Archieve</a>
+                            <mat-icon style="padding-right: 30px;">archive</mat-icon>Archieve
+                        </a>
                     </mat-nav-list>
                 </div>
                 <div>
                     <mat-nav-list class="colour1" fxLayout="row" fxLayoutAlign="start center">
                         <a mat-list-item routerLink=".">
-                            <mat-icon style="padding-right: 20px;">delete</mat-icon>Bin</a>
+                            <mat-icon style="padding-right: 30px;">delete</mat-icon>Bin
+                        </a>
                     </mat-nav-list>
                 </div>
             </div>
@@ -69,7 +74,9 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
+            <router-outlet>
 
+            </router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

@@ -9,7 +9,7 @@ export class UserServicesService {
 token:any;
 
   constructor(private httpService : HttpServicesService) { 
-    //this.token=localStorage.getItem("token")
+    this.token=localStorage.getItem("token")
   }
 
   registration(reqdata:any){
@@ -50,14 +50,14 @@ token:any;
 
   resetpassword(reqdata: any,token:any) {
     console.log(reqdata);
-
-    let header = {
+    console.log(token);
+    let headerOption = {
       headers: new HttpHeaders({
         'content-type': 'application/json-patch+json',
-        'Authorization':'Bearer' + token
+        'Authorization':'Bearer ' + token
       })
     }
-    return this.httpService.putService(`User/ChangePassward`, reqdata,true,header)
+    return this.httpService.putService(`User/ChangePassward`, reqdata,true,headerOption)
 
   }
 

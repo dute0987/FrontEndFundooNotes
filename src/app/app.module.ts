@@ -20,6 +20,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import { GetAllnotesComponent } from './components/get-allnotes/get-allnotes.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { DisplayNoteComponent } from './components/display-note/display-note.component';
+import { IconComponent } from './components/icon/icon.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 @NgModule({
@@ -29,7 +35,11 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    GetAllnotesComponent,
+    CreateNoteComponent,
+    DisplayNoteComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +57,7 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,MatExpansionModule
 
 
   ],
