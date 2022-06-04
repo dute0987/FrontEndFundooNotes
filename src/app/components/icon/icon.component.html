@@ -1,9 +1,16 @@
-<div fxlatout="row">
-    <img src="../../../assets/image/bell icon 1.png" style="width: 20px; margin-left:8px; padding-right: 20px;">
-    <img src="../../../assets/image/add-user-male icon.png" style="width: 20px; margin-left:8px; padding-right: 20px;">
-    <img src="../../../assets/image/colour icon.png" style="width: 20px; margin-left:8px; padding-right: 20px;">
-    <img src="../../../assets/image/add-image icon.png" style="width: 20px; margin-left:8px; padding-right: 20px;">
-    <img src="../../../assets/image/archieve icon.png" style="width: 20px; margin-left:8px; padding-right: 20px;">
-    <img src="../../../assets/image/more icon.png" style="width: 20px; margin-left:8px; padding-right: 20px;">
+<div fxLayout="row">
+    <img src="../../../assets/image/bell icon 1.png" style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;">
+    <img src="../../../assets/image/add-user-male icon.png" style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;">
+    <img src="../../../assets/image/colour icon.png" style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;">
+    <img src="../../../assets/image/add-image icon.png" style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;">
+    <img src="../../../assets/image/archieve icon.png" style="width: 15px; margin-left:5px; padding-right: 5px;height: 15px;cursor: pointer;" (click)="ArchieveNote()">
+
     
+        <button mat-button [matMenuTriggerFor]="menu"> <img src="../../../assets/image/more icon.png" style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;padding-bottom: 20px;"></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="Deletenote()">Delete</button>
+            <button mat-menu-item> Add Note</button>
+        </mat-menu>
+
+
 </div>

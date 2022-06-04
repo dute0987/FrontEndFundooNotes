@@ -25,7 +25,12 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
 import { IconComponent } from './components/icon/icon.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { AuthguardServiceService } from './services/AuthguardService/authguard-service.service';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ArchieveNotesComponent } from './components/archieve-notes/archieve-notes.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 
 
 @NgModule({
@@ -39,7 +44,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
     GetAllnotesComponent,
     CreateNoteComponent,
     DisplayNoteComponent,
-    IconComponent
+    IconComponent,
+    UpdateNoteComponent,
+    ArchieveNotesComponent,
+    TrashNoteComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,11 +66,15 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatCardModule,MatExpansionModule
+    MatCardModule,MatExpansionModule,
+    MatDialogModule,
+    MatMenuModule
 
 
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

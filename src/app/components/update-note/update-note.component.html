@@ -1,0 +1,17 @@
+<div style="width:300px;box-sizing:border-box;padding-bottom:none">
+    <div class="main">
+        <div >
+            <input type="text" [(ngModel)]="title" style="width: 150px; border:none;outline: none;">
+        </div>
+        <div style="padding-top: 20px;width:280px;">
+            <input type="text" [(ngModel)]="description" style="width: 150px;border: none;outline: none;">  
+        </div>
+    </div>
+    <div fxLayout="row" style="padding-bottom: 5px;padding-top:30px">
+        <app-icon></app-icon>
+        <div fxLayout="row" style="padding-bottom:5px;width: 10px; padding-left: 40px;">
+            <button mat-button class="closebutton" (click)="onSubmit()" >Close</button>
+        </div>
+    </div>
+    
+</div>

@@ -13,16 +13,19 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   token:any;
+  users="1"
 
   constructor(private formBuilder: FormBuilder, private user: UserServicesService, private rou:Router) { 
     this.token=localStorage.getItem("token");
   }
   
   ngOnInit() {
+    localStorage.setItem('SeesionUser',this.users) 
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+    
   }
   onSubmit() {
     console.log(this.loginForm.value);

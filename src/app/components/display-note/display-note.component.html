@@ -1,15 +1,23 @@
-<mat-card
-    style="width:290px;max-height:500px;background-color:whitesmoke;margin-bottom: 20px; margin-top: 50px;margin-left: 50px;">
-    <div>
-        <div style="padding-top: 10px;">
-            <input type="text" #txt class="input" placeholder="Title">
+<div fxLayout="row" class="main" fxLayout="row" fxLayout="row wrap">
+    <mat-card
+        style="width:230px;max-height:200px;background-color:whitesmoke;margin-bottom: 20px; margin-top: 50px;margin-left: 50px;"
+        *ngFor="let notearr of GetNotes">
+        <div>
+            <div  style="padding-top: 2px;" fxLayout="row" fxLayoutAlign="space-between" (click)="openDialog(notearr)">
+                {{notearr.title}}
+                <img style=" width: 15px;height: 15px;
+                " src="../../../assets/image/pin icon.png">
+                <!-- <input type="text" #txt class="input" placeholder="Title"> -->
+            </div>
+            <div style="padding-top: 10px;" (click)="openDialog(notearr)">
+                {{notearr.description}}
+                <!-- <input type="text" #txt class="input" placeholder="Description"> -->
+            </div>
         </div>
-        <div style="padding-top: 10px;">
-            <input type="text" #txt class="input" placeholder="Description">
-        </div>
-    </div>
 
-    <div style="height: 10px;padding-top: 20px;">
-        <app-icon></app-icon>
-    </div>
-</mat-card>
+
+        <div style="height: 10px;padding-top: 20px;">
+            <app-icon [noteCard]="notearr"></app-icon>
+        </div>
+    </mat-card>
+</div>

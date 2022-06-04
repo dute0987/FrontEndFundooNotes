@@ -6,16 +6,27 @@ import { RegistraionComponent } from './components/registraion/registraion.compo
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import { GetAllnotesComponent } from './components/get-allnotes/get-allnotes.component';
+import { AuthguardGuard } from './authguard.guard';
+import { ArchieveNotesComponent } from './components/archieve-notes/archieve-notes.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 
-const routes: Routes = [{path:'login',component:LoginComponent},
+const routes: Routes = [
+{path:'' ,redirectTo:"/login" ,pathMatch:'full'},
+{path:'login',component:LoginComponent},
 {path:'registration',component:RegistraionComponent},
 {path:'forgot-password',component:ForgotPasswordComponent},
 {path:'reset-password/:token',component:ResetPasswordComponent},
 {path:'dashboard',component:DashboardComponent,
 children:[
-  {path:'Notes',component:GetAllnotesComponent}
+  {path:'Notes',component:GetAllnotesComponent},
+  {path:'Arvhieve',component:ArchieveNotesComponent},
+  {path:'Trash',component:TrashNoteComponent}
 ]
-}];
+},
+{path:'dashboard',component:DashboardComponent,canActivate:[AuthguardGuard]},
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
