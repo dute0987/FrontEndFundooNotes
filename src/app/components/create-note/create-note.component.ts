@@ -18,7 +18,7 @@ export class CreateNoteComponent implements OnInit {
     this.createnoteForm = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      //colour:"Red"
+      // colour:"Red"
       
     });
 
@@ -35,7 +35,7 @@ export class CreateNoteComponent implements OnInit {
       let reqData ={
         title: this.createnoteForm.value.title,
         description: this.createnoteForm.value.description,
-        colour:'Red'
+        colour:"NoColour"
       }
       this.note.createnote(reqData).subscribe((response:any)=>{
         console.log(response);
@@ -43,6 +43,8 @@ export class CreateNoteComponent implements OnInit {
       }, error =>{
         console.log(error);
       });
+      window.location.reload();
+
     }
   }
 

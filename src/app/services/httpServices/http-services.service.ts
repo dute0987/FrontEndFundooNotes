@@ -25,8 +25,10 @@ baseurl=environment.baseUrl;
     return this.httpClient.get(this.baseurl+url,tokenRequired && httpOptions)
   }
 
-  deleteService(url: string='',tokenRequired: boolean = false, httpOptions: any = {}) {
-
-    return this.httpClient.delete(this.baseurl + url, tokenRequired && httpOptions)
+  // deleteService(Url: string,token: boolean = false, httpOptions: any = {}) {
+  //   return this.httpClient.delete(this.baseurl + Url, token && httpOptions);
+  // }
+  deleteService(Url: string,token: boolean = false, httpOptions: any = {}) {
+    return this.httpClient.delete(this.baseurl + Url, token && httpOptions);
   }
 }

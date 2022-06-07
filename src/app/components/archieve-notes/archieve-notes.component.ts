@@ -19,7 +19,8 @@ export class ArchieveNotesComponent implements OnInit {
         console.log(response);
         this.notesArr = response.data;
         console.log(this.notesArr);
-  
+        
+        this.notesArr.reverse();
         this.notesArr = this.notesArr.filter((object: any) => {
           return  object.isArchieve === true;
         } )

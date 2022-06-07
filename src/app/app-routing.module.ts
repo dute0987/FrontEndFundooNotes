@@ -16,14 +16,14 @@ const routes: Routes = [
 {path:'registration',component:RegistraionComponent},
 {path:'forgot-password',component:ForgotPasswordComponent},
 {path:'reset-password/:token',component:ResetPasswordComponent},
-{path:'dashboard',component:DashboardComponent,
+{path:'dashboard',component:DashboardComponent,canActivate:[AuthguardGuard],
 children:[
   {path:'Notes',component:GetAllnotesComponent},
   {path:'Arvhieve',component:ArchieveNotesComponent},
   {path:'Trash',component:TrashNoteComponent}
 ]
 },
-{path:'dashboard',component:DashboardComponent,canActivate:[AuthguardGuard]},
+// {path:'dashboard',component:DashboardComponent,canActivate:[AuthguardGuard]},
 
 
 ];

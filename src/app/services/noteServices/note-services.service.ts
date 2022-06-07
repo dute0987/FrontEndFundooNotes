@@ -7,7 +7,7 @@ import { HttpServicesService } from '../httpServices/http-services.service';
 })
 export class NoteServicesService {
   token: any;
-  //noteId:any;
+
   constructor(private httpService: HttpServicesService) {
     this.token = localStorage.getItem("token")
   }
@@ -63,6 +63,17 @@ export class NoteServicesService {
   //   }
   //   return this.httpService.postService(`Note/UpdateNote/${noteId}`,reqdata,true,header)
   // }
+  colorPallete( noteId: any, colour:any,){
+    console.log("token",this.token);
+  
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+   }
+   return this.httpService.putService(`Note/ChangeColour/${noteId}/${colour}`,{}, true, header)
+  }
 
   deleteNote(reqdata: any) {
     console.log(reqdata);
@@ -94,4 +105,33 @@ export class NoteServicesService {
     return this.httpService.putService( `Note/ArchiveNote/${reqdata.noteId}`, reqdata, true,header );
   }  
 
+  changecolourNote(reqdata: any) {
+    console.log(reqdata);
+    
+
+    let header = {
+      headers: new HttpHeaders({
+        
+        'Content-Type': 'application/json-patch+json',
+        'Authorization' : 'Bearer '+ this.token,
+
+      }),
+    };
+    return this.httpService.putService(`Note/ChangeColour/${reqdata.noteId}/${reqdata.colour}`, reqdata, true,header );
+  }  
+
+  permanantdeleteNote(reqdata: any) {
+    console.log(reqdata);
+    
+
+    let header = {
+      headers: new HttpHeaders({
+        
+        'Content-Type': 'application/json-patch+json',
+        'Authorization' : 'Bearer '+ this.token,
+
+      }),
+    };
+    return this.httpService.deleteService(`Note/DeleteNote/${reqdata.noteId}`, true,header );
+  }  
 }

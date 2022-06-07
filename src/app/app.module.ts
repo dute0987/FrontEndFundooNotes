@@ -31,6 +31,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArchieveNotesComponent } from './components/archieve-notes/archieve-notes.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+
 
 
 @NgModule({
@@ -48,6 +51,7 @@ import { TrashNoteComponent } from './components/trash-note/trash-note.component
     UpdateNoteComponent,
     ArchieveNotesComponent,
     TrashNoteComponent,
+  
     
   ],
   imports: [
@@ -68,7 +72,8 @@ import { TrashNoteComponent } from './components/trash-note/trash-note.component
     MatListModule,
     MatCardModule,MatExpansionModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
 
 
   ],

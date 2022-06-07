@@ -44,6 +44,6 @@ export class LoginComponent implements OnInit {
         console.log(error);
       });
     }
-    this.rou.navigateByUrl('/dashboard')
+    this.rou.navigateByUrl('/dashboard/Notes')
   }
 }

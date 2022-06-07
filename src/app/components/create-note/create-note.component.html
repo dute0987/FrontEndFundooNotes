@@ -1,7 +1,7 @@
-<div fxLayoutAlign="center center" style="margin-top: 30px; margin-left: 20px; ">
-    <div style="width:750px; background-color:whitesmoke; border-radius: 10px;">
+<div fxLayoutAlign="center center" fxFlex="90" style="margin-top: 30px; margin-left: 20px; ">
+    <div style="width:750px; background-color:whitesmoke; border-radius: 10px;flex-shrink: 400px;">
         <form [formGroup]="createnoteForm" (ngSubmit)="onSubmit()">
-            <div style="height: 30px; padding: 10px 15px; font-size: medium;" (click)="hideAndShow()"
+            <div fxLayout.xs="row" style="height: 30px; padding: 10px 15px; font-size: medium;" (click)="hideAndShow()"
                 *ngIf="show || !show">
 
                 <input formControlName="title" type="text" #txt class="input" placeholder="Title">
