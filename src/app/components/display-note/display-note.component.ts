@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DataService } from 'src/app/services/data.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
@@ -11,11 +12,22 @@ export class DisplayNoteComponent implements OnInit {
  @Input()GetNotes : any;
  @Output() displaytogetallnotes=new EventEmitter<string>();
  sentmsg:any;
- 
- constructor(public dialog: MatDialog) {}
+ //filterstring:string = '';
+ subscription:any;
+searchword:any;
+message:any;
 
+ constructor(public dialog: MatDialog,private data:DataService) {}
+ 
   ngOnInit(): void {
+
+    this.subscription = this.data.currentMessage.subscribe(message => {
+      this.message = message;
+      console.log(message.data[0]);
+      this.searchword = message.data[0]
+    });
   }
+  
   openDialog(noteCard:any): void {
     const dialogRef = this.dialog.open(UpdateNoteComponent, {
       width: '250px',

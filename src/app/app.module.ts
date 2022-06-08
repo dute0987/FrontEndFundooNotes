@@ -32,6 +32,7 @@ import { ArchieveNotesComponent } from './components/archieve-notes/archieve-not
 import {MatMenuModule} from '@angular/material/menu';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FilterPipe } from './components/pipe/filter.pipe';
 
 
 
@@ -51,6 +52,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     UpdateNoteComponent,
     ArchieveNotesComponent,
     TrashNoteComponent,
+    FilterPipe,
   
     
   ],

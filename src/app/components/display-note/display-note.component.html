@@ -1,7 +1,7 @@
 <div fxLayout="row" class="main" fxLayout="row" fxLayout="row wrap">
     <mat-card
         style="width:230px;max-height:200px;background-color:whitesmoke;margin-bottom: 20px; margin-top: 50px;margin-left: 50px;"
-        *ngFor="let notearr of GetNotes"  [style.background]="notearr.colour">
+        *ngFor="let notearr of GetNotes | filter:searchword"  [style.background]="notearr.colour">
 
         <div>
             <div style="padding-top: 2px;" fxLayout="row" fxLayoutAlign="space-between" (click)="openDialog(notearr)">

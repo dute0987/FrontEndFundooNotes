@@ -1,17 +1,14 @@
-<div class="example-container" fxFlex="100">
-    <mat-toolbar color="primary" class="example-toolbar">
+<div class="example-container" fxFlex.xs="100">
+    <mat-toolbar color="primary" class="example-toolbar" fx-shrink="300">
         <button mat-icon-button (click)="snav.toggle()">
             <mat-icon fxLayoutAlign="top center" style="padding: 13px; margin-right: 50px;">menu</mat-icon>
         </button>
         <img src="../../../assets/image/keeplogo.png" style="width: 40px; margin-left:8px">
         <h1 class="example-app-name" fxLayout="row">FundooNote</h1>
         <div fxFlex="100" >
-            <mat-form-field appearance="outline" 
-                style=" height: 10px;padding-right: 50px; width: 600px ;border-radius: 10px;padding-left: 30px;margin: 0px;flex-shrink: 10px;">
-                <mat-icon style="position: top center;margin-top: -150px; ">search</mat-icon>
-                <mat-label></mat-label>
-                <input  matInput placeholder="" style="padding-left:30px; vertical-align:top  ;position: top center; " >
-            </mat-form-field>
+            <input (keyup)=" searchtitle($event)" 
+            style="padding-right: 30px; width: 500px ;border-radius: 10px;padding-left: 50px;margin-left: 30px;height:48px;  border:none;vertical-align:top  ;position: top center;max-width: 600px;min-width: 50px;" placeholder="search">
+            
         </div>
         <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px; border-radius: 30px;">
             <img src="../../../assets/image/refreshlogo.png" style="width: 20px; margin-left:8px">

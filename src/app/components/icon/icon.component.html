@@ -6,7 +6,7 @@
 
 
     <img *ngIf="!isTrash" mat-button [matMenuTriggerFor]="Colour" src="../../../assets/image/colour icon.png"
-        style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;">
+        style="width: 15px; margin-left:5px; padding-right: 15px;height: 15px;cursor: pointer;">
     <mat-menu #Colour="matMenu" yPosition="below">
         <div class="urr">
             <div *ngFor="let Colour of colorsArr">
