@@ -9,6 +9,7 @@ import { GetAllnotesComponent } from './components/get-allnotes/get-allnotes.com
 import { AuthguardGuard } from './authguard.guard';
 import { ArchieveNotesComponent } from './components/archieve-notes/archieve-notes.component';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { LabelComponent } from './components/label/label.component';
 
 const routes: Routes = [
 {path:'' ,redirectTo:"/login" ,pathMatch:'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
 children:[
   {path:'Notes',component:GetAllnotesComponent},
   {path:'Arvhieve',component:ArchieveNotesComponent},
-  {path:'Trash',component:TrashNoteComponent}
+  {path:'Trash',component:TrashNoteComponent},
+  {path:'Label',component:LabelComponent}
 ]
 },
 // {path:'dashboard',component:DashboardComponent,canActivate:[AuthguardGuard]},

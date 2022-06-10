@@ -5,10 +5,11 @@
         </button>
         <img src="../../../assets/image/keeplogo.png" style="width: 40px; margin-left:8px">
         <h1 class="example-app-name" fxLayout="row">FundooNote</h1>
-        <div fxFlex="100" >
-            <input (keyup)=" searchtitle($event)" 
-            style="padding-right: 30px; width: 500px ;border-radius: 10px;padding-left: 50px;margin-left: 30px;height:48px;  border:none;vertical-align:top  ;position: top center;max-width: 600px;min-width: 50px;" placeholder="search">
-            
+        <div fxFlex="100">
+            <input (keyup)=" searchtitle($event)"
+                style="padding-right: 30px; width: 500px ;border-radius: 10px;padding-left: 50px;margin-left: 30px;height:48px;  border:none;vertical-align:top  ;position: top center;max-width: 600px;min-width: 50px;"
+                placeholder="search">
+
         </div>
         <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px; border-radius: 30px;">
             <img src="../../../assets/image/refreshlogo.png" style="width: 20px; margin-left:8px">
@@ -48,9 +49,17 @@
                         </a>
                     </mat-nav-list>
                 </div>
+                <div *ngFor="let LabelArr of lableArray">
+                    <mat-nav-list fxLayout="row" class="colour1" fxLayoutAlign="start center">
+                        <a mat-list-item>
+                            <mat-icon style="padding-right: 30px;"> labels</mat-icon>
+                            {{LabelArr.labelName}}
+                        </a>
+                    </mat-nav-list>
+                </div>
                 <div>
                     <mat-nav-list class="colour1" fxLayout="row" fxLayoutAlign="start center">
-                        <a mat-list-item routerLink=".">
+                        <a mat-list-item (click)="openDialog()">
                             <mat-icon style="padding-right: 30px;">edit</mat-icon>Edit Labels
                         </a>
                     </mat-nav-list>

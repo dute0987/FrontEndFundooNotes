@@ -33,6 +33,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FilterPipe } from './components/pipe/filter.pipe';
+import { LabelComponent } from './components/label/label.component';
 
 
 
@@ -53,6 +54,7 @@ import { FilterPipe } from './components/pipe/filter.pipe';
     ArchieveNotesComponent,
     TrashNoteComponent,
     FilterPipe,
+    LabelComponent,
   
     
   ],

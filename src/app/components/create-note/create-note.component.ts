@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteServicesService } from 'src/app/services/noteServices/note-services.service';
 
@@ -11,6 +11,7 @@ export class CreateNoteComponent implements OnInit {
   createnoteForm!: FormGroup;
   submitted = false;
   show = false;
+
   //panelOpenState = false;
   constructor(private note:NoteServicesService,private formBuilder: FormBuilder) { }
 
@@ -47,6 +48,8 @@ export class CreateNoteComponent implements OnInit {
 
     }
   }
+
+  
 
 
 }

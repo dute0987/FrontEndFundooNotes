@@ -1,0 +1,21 @@
+<div>
+  <span>Edit Label</span>
+  <div fxLayout="row" style="margin-top: 20px;">
+
+      <div >
+          <img *ngIf="!isLable"  (click)="hideAndShow()" src="../../../assets/image/Add sign icon.png">
+      </div>
+      <div fxLayout="row" *ngIf="isLable">
+          <img  (click)="hideAndShow()" src="../../../assets/image/Cut icon.png">
+          <input matInput [(ngModel)]="LabelName" placeholder="Create note">
+          <img (click)=" onSubmit()" src="../../../assets/image/Click.png">
+      </div>
+
+  </div>
+  <div  fxLayout="row" fxLayoutAlign="space-between end">
+      <img src="../../../assets/image/label.png" alt="" (mouseover)="show()" *ngIf="!isDelete">
+    <img (mouseout)="show()" *ngIf="isDelete" src="../../../assets/image/delete forever.png">
+      <img src="../../../assets/image/edit.png">
+
+  </div>
+</div>
