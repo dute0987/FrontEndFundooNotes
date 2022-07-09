@@ -36,5 +36,28 @@ export class LabelServiceService {
     return this.httpService.getService(`Getlabel/${UserId}`, true, header)
   }
 
+  deleteLabel(reqdata:any) {
+    console.log(reqdata)
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json-patch+json',
+        'Authorization':'Bearer ' + this.token
+      })
+    }
+    return this.httpService.deleteService(`DeleteLabel/${reqdata.LabelId}`, true, header)
+  }
+
+  updateLabel(reqdata:any) {
+    console.log(reqdata)
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json-patch+json',
+        'Authorization':'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`UpdateLabel/${reqdata.LabelId}/${reqdata.LabelName}`,reqdata, true, header)
+  }
+
+
 
 }

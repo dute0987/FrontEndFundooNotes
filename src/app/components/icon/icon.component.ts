@@ -13,6 +13,7 @@ import { MatSnackBar} from '@angular/material/snack-bar';
 export class IconComponent implements OnInit {
   @Input() noteCard: any;
   @Output() iconstodisplay = new EventEmitter<string>()
+  @Output() iconstodisplayNote = new EventEmitter<string>()
   noteId: any;
   isTrash:boolean=false;
   isArchieve: boolean = false;
@@ -42,23 +43,7 @@ export class IconComponent implements OnInit {
       console.log(this.isArchieve);
     }
   }
-  // colourPallite(colour: any) {
-  //   console.log(colour);
-  //   this.noteCard.colour = colour;
-  //   let reqdata = {
-  //     colour: colour,
-  //     noteId: [this.noteCard.noteId],
-
-  //   }
-  //   console.log(reqdata);
-  //   this.note.changecolourNote(reqdata).subscribe(
-  //     (response: any) => {
-  //       console.log(response);
-  //       this.iconstodisplay.emit(response);
-  //     }
-  //   )
-
-  // }
+ 
   changeColor(Colour:any)
   {
     console.log(Colour);
@@ -114,13 +99,12 @@ export class IconComponent implements OnInit {
     }
     this.note.archieveNote(reqdata).subscribe((response: any) => {
       console.log(response);
-      this.iconstodisplay.emit(response);
+      this.iconstodisplayNote.emit(response);
       this.snackBar.open('UnArchived Notes Successfully', '', {
         duration: 3000,
       })
     })
-    // window.location.reload();
-
+     //window.location.reload();
   }
 
   permanentDelete() {
@@ -135,8 +119,7 @@ export class IconComponent implements OnInit {
         duration: 3000,
       })
     })
-    // window.location.reload();
-
+     //window.location.reload();
   }
   Restore() {
     let reqdata = {
@@ -150,9 +133,6 @@ export class IconComponent implements OnInit {
         duration: 3000,
       })
     })
-    // window.location.reload();
-
+     //window.location.reload();
   }
- 
-
 }

@@ -4,28 +4,29 @@
             <mat-icon fxLayoutAlign="top center" style="padding: 13px; margin-right: 50px;">menu</mat-icon>
         </button>
         <img src="../../../assets/image/keeplogo.png" style="width: 40px; margin-left:8px">
-        <h1 class="example-app-name" fxLayout="row">FundooNote</h1>
-        <div fxFlex="100">
+        <h1 class="example-app-name" fxLayout="row">Fundoo</h1>
+        <div fxFlex="100" fxHide.xs class="m container">
+           
             <input (keyup)=" searchtitle($event)"
                 style="padding-right: 30px; width: 500px ;border-radius: 10px;padding-left: 50px;margin-left: 30px;height:48px;  border:none;vertical-align:top  ;position: top center;max-width: 600px;min-width: 50px;"
                 placeholder="search">
 
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px; border-radius: 30px;">
-            <img src="../../../assets/image/refreshlogo.png" style="width: 20px; margin-left:8px">
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 8px 5px 8px; border-radius: 30px;">
+            <img src="../../../assets/image/refreshlogo.png" style="width: 20px; margin-left:5px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px;border-radius: 30px">
-            <img src="../../../assets/image/viewStream.png" style="width: 20px; margin-left:8px">
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 8px 5px 8px;border-radius: 30px">
+            <img src="../../../assets/image/viewStream.png" style="width: 20px; margin-left:5px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 10px;border-radius: 30px">
-            <img src="../../../assets/image/setting logo.png" style="width: 20px; margin-left:8px">
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 8px 5px 8px;border-radius: 30px">
+            <img src="../../../assets/image/setting logo.png" style="width: 20px; margin-left:5px">
         </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 10px 5px 40px;border-radius: 30px">
-            <img src="../../../assets/image/app.png" style="width: 20px; margin-left:8px">
+        <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 8px 5px 15px;border-radius: 30px">
+            <img src="../../../assets/image/app.png" style="width: 20px; margin-left:5px">
         </div>
         <div fxLayout="row" fxLayoutAlign="start center" style="padding:5px 0px 5px 10px;border-radius: 30px">
             <img mat-button [matMenuTriggerFor]="menu" src="../../../assets/image/profile.png"
-                style="width: 20px; margin-left:8px; cursor: pointer;">
+                style="width: 20px; margin-left:5px; cursor: pointer;">
             <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="logout()">Logout</button>
             </mat-menu>
@@ -83,7 +84,7 @@
 
         </mat-sidenav>
 
-        <mat-sidenav-content>
+        <mat-sidenav-content fxFlex="100">
             <router-outlet>
             </router-outlet>
         </mat-sidenav-content>

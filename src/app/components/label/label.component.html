@@ -12,10 +12,11 @@
       </div>
 
   </div>
-  <div  fxLayout="row" fxLayoutAlign="space-between end">
-      <img src="../../../assets/image/label.png" alt="" (mouseover)="show()" *ngIf="!isDelete">
-    <img (mouseout)="show()" *ngIf="isDelete" src="../../../assets/image/delete forever.png">
-      <img src="../../../assets/image/edit.png">
+  <div *ngFor="let LabelArr of lableArray" fxLayout="row" fxLayoutAlign="space-between end">
+      <img src="../../../assets/image/label.png" (mouseover)="show()" *ngIf="!isDelete">
+    <img (mouseout)="show()" *ngIf="isDelete"  src="../../../assets/image/delete forever.png" (click)="deleteLabel(LabelArr.labelId)">
+    {{LabelArr.labelName}}
+      <img style="float: right;" src="../../../assets/image/edit.png" (click)="updateLabel()">
 
   </div>
 </div>

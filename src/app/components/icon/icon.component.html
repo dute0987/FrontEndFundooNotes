@@ -35,11 +35,11 @@
 </div>
 
 <div *ngIf="isTrash" fxLayout="row" fxLayoutAlign="start end" style="margin-top: -10px;">
-    <button mat-icon-button (click)="permanentDelete()"><img class="icons"
+    <button mat-icon-button ><img 
             src="./../../../assets/image/delete forever.png"
-            style="width: 15px; margin-left:10px; padding-right: 15px;height: 15px;padding-bottom: 20px;cursor: pointer;">
+            style="width: 15px; margin-left:10px; padding-right: 15px;height: 15px;padding-bottom: 20px;cursor: pointer;" (click)="permanentDelete()">
     </button>
-    <button mat-icon-button (click)="Restore()"><img class="icons" src="./../../../assets/image/restore from trash.png"
+    <button mat-icon-button (click)="Restore()"><img  src="./../../../assets/image/restore from trash.png"
             style="width: 15px; margin-left:10px; padding-right: 15px;height: 15px;padding-bottom: 20px;cursor: pointer;">
     </button>
 </div>

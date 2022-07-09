@@ -11,6 +11,7 @@ export class CreateNoteComponent implements OnInit {
   createnoteForm!: FormGroup;
   submitted = false;
   show = false;
+  @Output() createNotetogetallnotes=new EventEmitter<string>();
 
   //panelOpenState = false;
   constructor(private note:NoteServicesService,private formBuilder: FormBuilder) { }
@@ -40,6 +41,7 @@ export class CreateNoteComponent implements OnInit {
       }
       this.note.createnote(reqData).subscribe((response:any)=>{
         console.log(response);
+        this.createNotetogetallnotes.emit(response)
          
       }, error =>{
         console.log(error);
